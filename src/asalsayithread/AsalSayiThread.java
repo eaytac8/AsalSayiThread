@@ -12,8 +12,21 @@ public class AsalSayiThread extends Thread
         this.son = son;
     }
     
+    public void run()
+    {
+        for (int i=ilk; i<son; i++)
+        {
+            int sayac=0;
+            for(int j=2; j<sayidizisi[i];j++)
+            {
+                if(sayidizisi[i]%j==0)
+                    sayac++;
+                if(sayac==1)
+                    System.out.println("ASAL: "+sayidizisi[i]);
+            }
+        }
+    }
     
-
     public static void main(String[] args)
     {
         int sayidizisi[] = new int[10000];
